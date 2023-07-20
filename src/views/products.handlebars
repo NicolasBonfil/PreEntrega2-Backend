@@ -1,0 +1,14 @@
+{{#each products}}
+    <p>{{this.title}} {{this.description}}</p>
+    <p>{{this.price}}</p>
+    <button>Añadir al carrito</button>
+    <br>
+{{/each}}
+
+{{#if hasPrevPage}}
+    <button><a href="/products?page={{prevPage}}">Anterior</a></button>
+{{/if}}
+
+{{#if hasNextPage}}
+    <button><a href="/products?page={{nextPage}}">Siguiente</a></button>
+{{/if}}
