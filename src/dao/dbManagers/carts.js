@@ -30,7 +30,7 @@ export default class Carts{
         const cart = await cartsModel.findOne({_id: cid})
         if(!cart) return ({status: "error", error: "Carrito inexistente"})
 
-        const carrito = await cartsModel.findOne({_id: cid}).populate("productsInCart.product")
+        const carrito = await cartsModel.findOne({_id: cid}).populate("productsInCart.product").lean(true)
 
         const pepe = [{quantity: 1, product: {title: "Nico"}}, {quantity: 1, product: {title: "Mariana"}}]
         return (carrito.productsInCart)

@@ -1,3 +1,7 @@
 <div>
-    {{products}}
+    {{#each products}}
+        {{this.product.title}} {{this.product.description}} <br>
+        <button>-</button> {{this.quantity}} <button>+</button>
+        <br>
+    {{/each}}
 </div>
